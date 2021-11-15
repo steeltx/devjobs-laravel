@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('styles')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/medium-editor/5.23.3/css/medium-editor.min.css" integrity="sha512-zYqhQjtcNMt8/h4RJallhYRev/et7+k/HDyry20li5fWSJYSExP9O07Ung28MUuXDneIFg0f2/U3HJZWsTNAiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+@endsection
+
 @section('navegacion')
    @include('ui.adminnav')
 @endsection
@@ -92,10 +96,28 @@
                 @endforeach
             </select>
         </div>
+
+        <div class="mt-5">
+            <label
+                for="descripcion"
+                class="block text-gray-700 text-sm mb-2"
+                >Descripción del puesto</label>
+            <div class="editable"></div>
+        </div>
         <button
             type="submit"
             class="bg-green-500 w-full hover:bg-green-600 text-gray-100 font-bold p-3 focus:outline focus:shadow-outline uppercase"
             >Publicar vacante</button>
     </form>
 
+@endsection
+
+
+@section('scripts')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-editor/5.23.3/js/medium-editor.min.js" integrity="sha512-5D/0tAVbq1D3ZAzbxOnvpLt7Jl/n8m/YGASscHTNYsBvTcJnrYNiDIJm6We0RPJCpFJWowOPNz9ZJx7Ei+yFiA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const editor = new MediumEditor('.editable');
+        });
+    </script>
 @endsection
