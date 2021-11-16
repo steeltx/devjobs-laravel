@@ -12,7 +12,11 @@
 @section('content')
 
     <h1 class="text-2xl text-center mt-10"> Nueva vacante</h1>
-    <form class="max-w-lg mx-auto my-10">
+    <form
+        action="{{ route('vacantes.store')}}"
+        method="POST"
+        class="max-w-lg mx-auto my-10">
+        @csrf
         <div class="mt-5">
             <label
                 for="titulo"
@@ -23,7 +27,13 @@
                 type="text"
                 class="p-3 bg-gray-100 rounded form-input w-full @error('titulo') is-invalid @enderror"
                 name="titulo" value="{{ old('titulo') }}"
-                autofocus>
+                placeholder="Titulo de la vacante">
+            @error('titulo')
+                <div class="bg-red-100 border border-red-400 text-red-400 px-4 py-3 rounded relative mt-3 mb-6" role="alert">
+                    <strong class="font-bold">Error!</strong>
+                    <span>{{$message}}</span>
+                </div>
+            @enderror
         </div>
         <div class="mt-5">
             <label
@@ -39,9 +49,18 @@
             >
                 <option disabled selected>--Selecciona --</option>
                 @foreach ($categorias as $categoria)
-                    <option value="{{$categoria->id}}">{{$categoria->nombre}}</option>
+                    <option
+                        {{ old('categoria') == $categoria->id ? 'selected' : ''}}
+                        value="{{$categoria->id}}"
+                        >{{$categoria->nombre}}</option>
                 @endforeach
             </select>
+            @error('categoria')
+                <div class="bg-red-100 border border-red-400 text-red-400 px-4 py-3 rounded relative mt-3 mb-6" role="alert">
+                    <strong class="font-bold">Error!</strong>
+                    <span>{{$message}}</span>
+                </div>
+            @enderror
         </div>
         <div class="mt-5">
             <label
@@ -57,9 +76,18 @@
             >
                 <option disabled selected>--Selecciona --</option>
                 @foreach ($experiencias as $experiencia)
-                    <option value="{{$experiencia->id}}">{{$experiencia->nombre}}</option>
+                    <option
+                        {{ old('experiencia') == $experiencia->id ? 'selected' : ''}}
+                        value="{{$experiencia->id}}"
+                        >{{$experiencia->nombre}}</option>
                 @endforeach
             </select>
+            @error('experiencia')
+                <div class="bg-red-100 border border-red-400 text-red-400 px-4 py-3 rounded relative mt-3 mb-6" role="alert">
+                    <strong class="font-bold">Error!</strong>
+                    <span>{{$message}}</span>
+                </div>
+            @enderror
         </div>
         <div class="mt-5">
             <label
@@ -75,9 +103,17 @@
             >
                 <option disabled selected>--Selecciona --</option>
                 @foreach ($ubicaciones as $ubicacion)
-                    <option value="{{$ubicacion->id}}">{{$ubicacion->nombre}}</option>
+                    <option
+                        {{ old('ubicacion') == $ubicacion->id ? 'selected' : ''}}
+                        value="{{$ubicacion->id}}">{{$ubicacion->nombre}}</option>
                 @endforeach
             </select>
+            @error('ubicacion')
+                <div class="bg-red-100 border border-red-400 text-red-400 px-4 py-3 rounded relative mt-3 mb-6" role="alert">
+                    <strong class="font-bold">Error!</strong>
+                    <span>{{$message}}</span>
+                </div>
+            @enderror
         </div>
         <div class="mt-5">
             <label
@@ -93,9 +129,17 @@
             >
                 <option disabled selected>--Selecciona --</option>
                 @foreach ($salarios as $salario)
-                    <option value="{{$salario->id}}">{{$salario->nombre}}</option>
+                    <option
+                        {{ old('salario') == $salario->id ? 'selected' : ''}}
+                        value="{{$salario->id}}">{{$salario->nombre}}</option>
                 @endforeach
             </select>
+            @error('salario')
+                <div class="bg-red-100 border border-red-400 text-red-400 px-4 py-3 rounded relative mt-3 mb-6" role="alert">
+                    <strong class="font-bold">Error!</strong>
+                    <span>{{$message}}</span>
+                </div>
+            @enderror
         </div>
 
         <div class="mt-5">

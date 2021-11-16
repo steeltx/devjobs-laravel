@@ -1936,9 +1936,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['skills'],
-  mounted: function mounted() {
-    console.log(this.skills);
-  },
+  mounted: function mounted() {},
   data: function data() {
     return {
       habilidades: new Set()
@@ -49884,15 +49882,14 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*!*************************************************!*\
   !*** ./resources/js/components/ListaSkills.vue ***!
   \*************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ListaSkills_vue_vue_type_template_id_5ad4820a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ListaSkills.vue?vue&type=template&id=5ad4820a& */ "./resources/js/components/ListaSkills.vue?vue&type=template&id=5ad4820a&");
 /* harmony import */ var _ListaSkills_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ListaSkills.vue?vue&type=script&lang=js& */ "./resources/js/components/ListaSkills.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _ListaSkills_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _ListaSkills_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -49922,7 +49919,7 @@ component.options.__file = "resources/js/components/ListaSkills.vue"
 /*!**************************************************************************!*\
   !*** ./resources/js/components/ListaSkills.vue?vue&type=script&lang=js& ***!
   \**************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

@@ -16,7 +16,7 @@
     export default{
         props:['skills'],
         mounted(){
-            console.log(this.skills);
+
         },
         data: function(){
             return{
