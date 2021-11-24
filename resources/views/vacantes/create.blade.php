@@ -148,7 +148,13 @@
                 class="block text-gray-700 text-sm mb-2"
                 >Descripción del puesto</label>
             <div class="editable p-3 bg-gray-100 rounded form-input w-full text-gray-700"></div>
-            <input type="hidden" name="descripcion" id="descripcion">
+            <input type="hidden" name="descripcion" id="descripcion" value="{{old('descripcion')}}">
+            @error('descripcion')
+            <div class="bg-red-100 border border-red-400 text-red-400 px-4 py-3 rounded relative mt-3 mb-6" role="alert">
+                <strong class="font-bold">Error!</strong>
+                <span>{{$message}}</span>
+            </div>
+        @enderror
         </div>
 
         <div class="mt-5">
@@ -190,7 +196,7 @@
             // Medium Editor
             const editor = new MediumEditor('.editable',{
                 toolbar:{
-                    buttons: ['bold', 'italic','underline','quote','anchor','justifyLeft','justifyCenter','justifyRight','justifyFull','orderedList','unorderedList','h2','h3'],
+                    buttons: ['bold', 'italic','underline','quote','anchor','justifyLeft','justifyCenter','justifyRight','justifyFull','orderedlist','unorderedlist','h2','h3'],
                     static: true,
                     sticky: true
                 },
@@ -198,6 +204,13 @@
                     text:'Información de la vacante'
                 }
             });
+
+            // agrega a input hidden lo que el usuario escribe
+            editor.setContent(document.querySelector('#descripcion').value);
+
+            // llenar el editor con el contenido del input hidden
+
+
             editor.subscribe('editableInput', function(eventObj, editable){
                 const contenido = editor.getContent();
                 document.querySelector('#descripcion').value = contenido;
